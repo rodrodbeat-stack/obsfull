@@ -496,6 +496,99 @@
 <div class="toast" id="toast"></div>
 
 <script src="app.js"></script>
+<!-- BI INTELLIGENCE DASHBOARD -->
+<section id="bi-dashboard" class="bi-dashboard" hidden>
 
+  <header class="bi-header">
+    <div>
+      <span class="bi-eyebrow">CLOUD OPERATIONS / ANALYTICS</span>
+      <h1>BI <span>INTELLIGENCE</span></h1>
+      <p>Business Intelligence & Decision Support</p>
+    </div>
+
+    <div class="bi-actions">
+      <select id="bi-period" aria-label="Periodo de análisis">
+        <option value="7">Últimos 7 días</option>
+        <option value="30" selected>Últimos 30 días</option>
+        <option value="90">Últimos 90 días</option>
+      </select>
+      <button onclick="closeBIDashboard()">← VOLVER</button>
+    </div>
+  </header>
+
+  <div class="bi-notice">
+    ● MODO DEMOSTRACIÓN — Métricas simuladas, no corresponden a datos reales.
+  </div>
+
+  <div class="bi-kpi-grid">
+    <article class="bi-kpi">
+      <span>PIPELINE SUCCESS</span>
+      <strong>96.8%</strong>
+      <small>Éxito de ejecuciones</small>
+    </article>
+
+    <article class="bi-kpi">
+      <span>CLOUD SPEND</span>
+      <strong>$4,820</strong>
+      <small>USD · Costos simulados</small>
+    </article>
+
+    <article class="bi-kpi">
+      <span>AVAILABILITY</span>
+      <strong>99.95%</strong>
+      <small>Disponibilidad simulada</small>
+    </article>
+
+    <article class="bi-kpi">
+      <span>GOVERNANCE</span>
+      <strong>92/100</strong>
+      <small>Índice demostrativo</small>
+    </article>
+  </div>
+
+  <div class="bi-chart-grid">
+
+    <article class="bi-panel">
+      <h3>PIPELINE PERFORMANCE</h3>
+      <p>Ejecuciones exitosas y fallidas</p>
+      <div class="bi-chart-container">
+        <canvas id="bi-pipeline-chart"></canvas>
+      </div>
+    </article>
+
+    <article class="bi-panel">
+      <h3>CLOUD COST DISTRIBUTION</h3>
+      <p>Distribución demostrativa por proveedor</p>
+      <div class="bi-chart-container">
+        <canvas id="bi-cost-chart"></canvas>
+      </div>
+    </article>
+
+    <article class="bi-panel">
+      <h3>GOVERNANCE & COMPLIANCE</h3>
+      <p>Distribución de controles</p>
+      <div class="bi-chart-container">
+        <canvas id="bi-governance-chart"></canvas>
+      </div>
+    </article>
+
+    <article class="bi-panel">
+      <h3>OBSERVABILITY TRENDS</h3>
+      <p>Eventos registrados por periodo</p>
+      <div class="bi-chart-container">
+        <canvas id="bi-observability-chart"></canvas>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="bi-footer">
+    BI INTELLIGENCE // CLOUD ANALYTICS // DATA-DRIVEN OPERATIONS
+  </footer>
+
+</section>
+
+<!-- Chart.js: motor de gráficos -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>

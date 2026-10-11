@@ -336,3 +336,174 @@ function simulateCoreLoad() {
 }
 
 setInterval(simulateCoreLoad, 5000);
+const biCharts = {};
+
+function openBIDashboard(event) {
+  if (event) event.preventDefault();
+
+  const dashboard = document.getElementById("bi-dashboard");
+  if (!dashboard) return;
+
+  document.querySelectorAll("body > *").forEach(element => {
+    if (
+      element.id !== "bi-dashboard" &&
+      element.tagName !== "SCRIPT"
+    ) {
+      element.dataset.biPreviousDisplay =
+        element.style.display || "";
+      element.style.display = "none";
+    }
+  });
+
+  dashboard.hidden = false;
+  renderBIDashboard();
+  window.scrollTo(0, 0);
+}
+
+function closeBIDashboard() {
+  const dashboard = document.getElementById("bi-dashboard");
+  if (!dashboard) return;
+
+  dashboard.hidden = true;
+
+  document.querySelectorAll("[data-bi-previous-display]")
+    .forEach(element => {
+      element.style.display =
+        element.dataset.biPreviousDisplay;
+      delete element.dataset.biPreviousDisplay;
+    });
+
+  window.scrollTo(0, 0);
+}
+
+function renderBIDashboard() {
+  if (typeof Chart === "undefined") {
+    console.error("Chart.js no está disponible.");
+    return;
+  }
+
+  const days = Number(
+    document.getElementById("bi-period")?.value || 30
+  );
+
+  const labels = Array.from(
+    { length: 7 },
+    (_, i) => {
+      const day = Math.round(i * (days - 1) / 6);
+      return `D-${days - day}`;
+    }
+  );
+
+  const commonOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: { color: "#d8def0" }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { color: "#91a0bb" },
+        grid: { color: "#ffffff0c" }
+      },
+      y: {
+        beginAtZero: true,
+        ticks: { color: "#91a0bb" },
+        grid: { color: "#ffffff12" }
+      }
+    }
+  };
+
+  function createChart(id, config) {
+    if (biCharts[id]) biCharts[id].destroy();
+
+    const canvas = document.getElementById(id);
+    if (canvas) {
+      biCharts[id] = new Chart(canvas, config);
+    }
+  }
+
+  createChart("bi-pipeline-chart", {
+    type: "line",
+    data: {
+      labels,
+      datasets: [
+        {
+          label: "Exitosos",
+          data: [82, 88, 85, 93, 91, 96, 97],
+          borderColor: "#00e5ff",
+          tension: 0.35
+        },
+        {
+          label: "Fallidos",
+          data: [18, 12, 15, 7, 9, 4, 3],
+          borderColor: "#ff5577",
+          tension: 0.35
+        }
+      ]
+    },
+    options: commonOptions
+  });
+
+  createChart("bi-cost-chart", {
+    type: "doughnut",
+    data: {
+      labels: ["AWS", "Azure", "GCP"],
+      datasets: [{
+        data: [50, 30, 20],
+        backgroundColor: ["#00e5ff", "#b388ff", "#ffb454"],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: "bottom",
+          labels: { color: "#d8def0" }
+        }
+      }
+    }
+  });
+
+  createChart("bi-governance-chart", {
+    type: "doughnut",
+    data: {
+      labels: ["Cumple", "Pendiente", "Incumple"],
+      datasets: [{
+        data: [78, 14, 8],
+        backgroundColor: ["#00e5a0", "#ffb454", "#ff5577"],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: "bottom",
+          labels: { color: "#d8def0" }
+        }
+      }
+    }
+  });
+
+  createChart("bi-observability-chart", {
+    type: "bar",
+    data: {
+      labels,
+      datasets: [{
+        label: "Eventos",
+        data: [42, 56, 39, 68, 51, 34, 29],
+        backgroundColor: "#b388ff",
+        borderRadius: 5
+      }]
+    },
+    options: commonOptions
+  });
+}
+
+document.getElementById("bi-period")
+  ?.addEventListener("change", renderBIDashboard);

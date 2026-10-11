@@ -235,4 +235,267 @@
 
                 <div class="axis axis-v"></div>
                 <div class="axis axis-h"></div>
-                <div class="axis axis-d1
+                <div class="axis axis-d1"></div>
+                <div class="axis axis-d2"></div>
+
+                <div class="radar-sweep"></div>
+
+                <div class="radar-core">
+                    <small>ORION</small>
+                    <strong>CORE</strong>
+                    <span>ONLINE</span>
+                </div>
+
+                <button class="blip b1"
+                    data-info="AWS Production · Healthy"></button>
+
+                <button class="blip b2"
+                    data-info="Azure Fabric · Connected"></button>
+
+                <button class="blip b3 alert"
+                    data-info="Governance · Review required"></button>
+
+                <button class="blip b4"
+                    data-info="Kubernetes · Healthy"></button>
+
+                <button class="blip b5 alert"
+                    data-info="CI/CD Pipeline · Running"></button>
+
+                <button class="blip b6"
+                    data-info="Telemetry · Connected"></button>
+
+                <button class="blip b7 alert"
+                    data-info="Security Posture · Review required"></button>
+
+            </div>
+
+            <div class="radar-footer">
+                <span>NODES DETECTED <strong>07</strong></span>
+                <span>SIGNAL INTEGRITY <strong>98.4%</strong></span>
+            </div>
+
+            <div class="radar-message" id="radarMessage">
+                SELECT A NODE TO INSPECT
+            </div>
+
+        </section>
+
+        <section class="panel control-panel">
+
+            <div class="panel-title">
+                <h3>PLATFORM CONTROL</h3>
+                <span>•••</span>
+            </div>
+
+            <div class="module-grid">
+
+                <button class="module" data-module="cloud">
+                    <span>◇</span>
+                    <strong>CLOUD</strong>
+                    <small>FABRIC</small>
+                    <em>ACTIVE</em>
+                </button>
+
+                <button class="module" data-module="cicd">
+                    <span>⌁</span>
+                    <strong>CI / CD</strong>
+                    <small>PIPELINES</small>
+                    <em>ACTIVE</em>
+                </button>
+
+                <button class="module" data-module="security">
+                    <span>⬡</span>
+                    <strong>ZERO TRUST</strong>
+                    <small>SECURITY</small>
+                    <em>ACTIVE</em>
+                </button>
+
+                <button class="module" data-module="governance">
+                    <span>⌘</span>
+                    <strong>POLICY</strong>
+                    <small>GOVERNANCE</small>
+                    <em>ACTIVE</em>
+                </button>
+
+            </div>
+
+            <div class="control-bottom">
+                <span>ENVIRONMENT</span>
+
+                <select id="environment">
+                    <option>PRODUCTION</option>
+                    <option>STAGING</option>
+                    <option>DEVELOPMENT</option>
+                </select>
+
+                <button id="zoomIn">＋</button>
+                <button id="zoomOut">－</button>
+            </div>
+
+        </section>
+
+        <nav class="bottom-nav">
+            <button class="active" data-module="overview">⬡ OVERVIEW</button>
+            <button data-module="cloud">◇ CLOUD FABRIC</button>
+            <button data-module="cicd">⌁ CI / CD</button>
+            <button data-module="governance">⌘ GOVERNANCE</button>
+            <button data-module="observability">▤ TELEMETRY</button>
+            <button data-module="security">⚙ SECURITY</button>
+        </nav>
+
+    </main>
+
+    <!-- RIGHT COLUMN -->
+
+    <aside class="column">
+
+        <section class="panel threat-panel">
+            <div class="panel-title">
+                <h3>GOVERNANCE INTEL</h3>
+                <span class="red">•••</span>
+            </div>
+
+            <div class="threat-content">
+                <div class="threat-icon">
+                    ⬡
+                    <small>POLICY</small>
+                </div>
+
+                <div class="threat-info">
+                    <div><span>CONTROL ID</span><strong>GOV-024</strong></div>
+                    <div><span>DOMAIN</span><strong>CLOUD BASELINE</strong></div>
+                    <div><span>FINDINGS</span><strong>12 OPEN</strong></div>
+                    <div><span>OWNER</span><strong>PLATFORM OPS</strong></div>
+                    <div><span>STATUS</span><strong class="red">REVIEW</strong></div>
+                </div>
+            </div>
+
+            <div class="risk">
+                <span>RISK LEVEL</span>
+                <div class="risk-bars">
+                    <i></i><i></i><i></i><i></i>
+                    <i></i><i></i><i></i><i class="dim"></i>
+                </div>
+                <strong>HIGH</strong>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-title">
+                <h3>SYSTEM DIAGNOSTICS</h3>
+                <span>•••</span>
+            </div>
+
+            <div class="gauges">
+
+                <div>
+                    <div class="gauge"><strong>91%</strong></div>
+                    <small>PIPELINES</small>
+                </div>
+
+                <div>
+                    <div class="gauge"><strong>94%</strong></div>
+                    <small>POLICIES</small>
+                </div>
+
+                <div>
+                    <div class="gauge"><strong>88%</strong></div>
+                    <small>IDENTITY</small>
+                </div>
+
+                <div>
+                    <div class="gauge danger"><strong>79%</strong></div>
+                    <small>SECURITY</small>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="panel telemetry">
+            <div class="panel-title">
+                <h3>TELEMETRY NEXUS</h3>
+                <span>•••</span>
+            </div>
+
+            <div class="telemetry-content">
+
+                <div class="chart">
+                    <svg viewBox="0 0 220 100" preserveAspectRatio="none">
+
+                        <path class="gridline"
+                            d="M0 20H220 M0 40H220 M0 60H220 M0 80H220
+                            M44 0V100 M88 0V100 M132 0V100 M176 0V100"/>
+
+                        <polyline class="red-line"
+                            points="0,80 20,70 40,76 60,48 80,58
+                            100,34 120,42 140,22 160,30 180,15 200,25 220,10"/>
+
+                        <polyline
+                            points="0,90 20,84 40,88 60,72 80,75
+                            100,60 120,66 140,50 160,58 180,42 200,48 220,35"/>
+
+                    </svg>
+                </div>
+
+                <div class="telemetry-stats">
+                    <div><span>AVAILABILITY</span><strong>99.95%</strong></div>
+                    <div><span>LATENCY P95</span><strong>182 MS</strong></div>
+                    <div><span>ERROR RATE</span><strong>0.08%</strong></div>
+                    <div><span>THROUGHPUT</span><strong>2.4K R/S</strong></div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="panel engagement">
+            <div class="panel-title">
+                <h3>CI/CD COMMAND</h3>
+                <span class="red">•••</span>
+            </div>
+
+            <div class="pipeline-status">
+                <span>PIPELINE STATUS</span>
+                <strong class="cyan">RUNNING</strong>
+            </div>
+
+            <div class="pipeline-stages">
+                <div><strong>⌁</strong><small>BUILD</small><b>PASS</b></div>
+                <div><strong>◇</strong><small>TEST</small><b>PASS</b></div>
+                <div><strong>⬡</strong><small>SCAN</small><b>PASS</b></div>
+                <div><strong>⇧</strong><small>DEPLOY</small><b>RUNNING</b></div>
+            </div>
+
+            <button class="launch-btn" data-module="cicd">
+                OPEN PIPELINE CONTROL
+            </button>
+
+            <div class="standby">● DEPLOYMENT MONITORING ACTIVE</div>
+        </section>
+
+    </aside>
+
+</div>
+
+<!-- MODULE DETAILS -->
+
+<section class="details panel" id="details">
+
+    <div class="details-header">
+        <div>
+            <small>ORION-7 / OPERATIONS MODULE</small>
+            <h2 id="detailsTitle">COMMAND OVERVIEW</h2>
+        </div>
+
+        <button id="closeDetails">✕ CLOSE</button>
+    </div>
+
+    <div id="detailsContent"></div>
+
+</section>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1101,3 +1101,66 @@ body.high-contrast {
         min-width: 600px;
     }
 }
+<a href="https://rodrodbeat-stack.github.io/obsfull/"
+   class="module-card obs-full"
+   target="_blank"
+   rel="noopener noreferrer">
+
+  <div class="module-icon">◉</div>
+
+  <span class="module-status">EXTERNAL PLATFORM</span>
+
+  <h3>OBS FULL</h3>
+
+  <p>
+    Observability platform: métricas, logs,
+    monitoreo y telemetría.
+  </p>
+
+  <div class="module-footer">
+    <span>OBSERVABILITY CORE</span>
+    <span>ACCESS ↗</span>
+  </div>
+
+</a>
+
+.obs-full {
+  border: 1px solid #00e5ff;
+  background: linear-gradient(145deg, #101b2c, #080d18);
+  color: #e8faff;
+  padding: 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  display: block;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.obs-full:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 22px #00e5ff40;
+}
+
+.obs-full .module-icon {
+  font-size: 32px;
+  color: #00e5ff;
+}
+
+.obs-full .module-status {
+  color: #00e5ff;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.obs-full h3 {
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+.obs-full .module-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 11px;
+  color: #00e5ff;
+}

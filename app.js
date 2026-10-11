@@ -507,3 +507,5 @@ function renderBIDashboard() {
 
 document.getElementById("bi-period")
   ?.addEventListener("change", renderBIDashboard);
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="app.js"></script>

@@ -1,130 +1,238 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#030914">
-  <meta name="description" content="SKYNET — Dashboard de gobernanza, seguridad cloud y despliegue CI/CD.">
-  <title>SKYNET | Governance · Security · CI/CD</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#020909">
+
+    <title>ORION-7 | Cloud Command Center</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="scanlines" aria-hidden="true"></div>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#" aria-label="SKYNET inicio">
-        <span class="brand-mark">▲</span>
-        <span><strong>SKYNET</strong><small>GOVERNANCE · SECURITY · CI/CD</small></span>
-      </a>
-      <nav class="nav-menu" aria-label="Navegación principal">
-        <button class="nav-item active" data-section="overview">⌂ <span>Inicio</span></button>
-        <button class="nav-item" data-section="governance">⬡ <span>Gobernanza</span></button>
-        <button class="nav-item" data-section="security">▣ <span>Seguridad</span></button>
-        <button class="nav-item" data-section="pipeline">∞ <span>CI/CD</span></button>
-        <button class="nav-item" data-section="environments">☁ <span>Infraestructura</span></button>
-        <button class="nav-item" data-section="kubernetes">⬢ <span>Kubernetes</span></button>
-        <button class="nav-item" data-section="observability">⌁ <span>Monitoreo</span></button>
-        <button class="nav-item" data-section="reports">▤ <span>Reportes</span></button>
-        <button class="nav-item" data-section="settings">⚙ <span>Configuración</span></button>
-      </nav>
-      <div class="side-visual">
-        <div class="robot-eye">◉</div>
-        <div class="robot-label">SISTEMA DE DEFENSA<br><b>ACTIVO</b></div>
-      </div>
-      <p class="side-quote">EL FUTURO DE LA NUBE<br>ES SEGURO, AUTOMATIZADO<br>Y OBSERVABLE.</p>
-      <div class="sidebar-foot">NODE STATUS <span class="pulse-dot"></span> ONLINE</div>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="logo">◢◇◣</span>
+        <div>
+            <small>PLATFORM ID</small>
+            <h2>ORION-7</h2>
+        </div>
+    </div>
+
+    <div class="top-item">
+        <small>SYSTEM TIME</small>
+        <strong id="clock">00:00:00 UTC</strong>
+    </div>
+
+    <div class="top-item">
+        <small>OPERATOR</small>
+        <strong class="cyan">DEVOPS-21</strong>
+    </div>
+
+    <div class="status">
+        <small>SYSTEM STATUS</small>
+        <strong>● NOMINAL</strong>
+    </div>
+
+    <div class="top-item">
+        <small>LINK QUALITY</small>
+        <strong>98%</strong>
+    </div>
+
+    <div class="top-item">
+        <small>CORE LOAD</small>
+        <strong id="coreLoad">42%</strong>
+    </div>
+
+    <button class="icon-btn" id="contrastBtn" title="Contraste">◉</button>
+</header>
+
+<div class="dashboard">
+
+    <!-- LEFT COLUMN -->
+
+    <aside class="column">
+
+        <section class="panel">
+            <div class="panel-title">
+                <h3>MISSION OVERVIEW</h3>
+                <span>•••</span>
+            </div>
+
+            <div class="mission-info">
+                <small>PLATFORM OBJECTIVE</small>
+                <strong>INFRASTRUCTURE OPERATIONS</strong>
+
+                <small>ACTIVE ENVIRONMENT</small>
+                <strong>PRODUCTION / MULTI-CLOUD</strong>
+
+                <small>SERVICE AVAILABILITY</small>
+                <strong class="cyan">99.95%</strong>
+
+                <small>ACTIVE SERVICES</small>
+                <strong>24 / 26</strong>
+            </div>
+
+            <div class="chart">
+                <svg viewBox="0 0 320 100" preserveAspectRatio="none">
+                    <path class="gridline"
+                        d="M0 20H320 M0 40H320 M0 60H320 M0 80H320
+                           M40 0V100 M80 0V100 M120 0V100
+                           M160 0V100 M200 0V100 M240 0V100 M280 0V100"/>
+
+                    <polyline
+                        points="0,80 25,70 42,45 60,60 78,35 96,49
+                        115,20 135,45 155,32 175,57 195,40
+                        215,18 235,38 255,50 280,35 300,65 320,55"/>
+                </svg>
+            </div>
+
+            <div class="progress-label">
+                <span>DEPLOYMENT READINESS</span>
+                <strong>87%</strong>
+            </div>
+
+            <div class="progress">
+                <div style="width:87%"></div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-title">
+                <h3>CLOUD FABRIC</h3>
+                <span>•••</span>
+            </div>
+
+            <div class="resource">
+                <span class="resource-icon">◇</span>
+                <span>AWS</span>
+                <strong class="green">CONNECTED</strong>
+            </div>
+
+            <div class="resource">
+                <span class="resource-icon">◇</span>
+                <span>AZURE</span>
+                <strong class="green">CONNECTED</strong>
+            </div>
+
+            <div class="resource">
+                <span class="resource-icon">◇</span>
+                <span>GCP</span>
+                <strong class="green">CONNECTED</strong>
+            </div>
+
+            <div class="resource">
+                <span class="resource-icon">⬡</span>
+                <span>KUBERNETES</span>
+                <strong class="cyan">ACTIVE</strong>
+            </div>
+
+            <div class="noise">
+                <strong>22%</strong>
+                <small>NOISE</small>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-title">
+                <h3>PIPELINE ANALYSIS</h3>
+                <span>•••</span>
+            </div>
+
+            <div class="chart pipeline-chart">
+                <svg viewBox="0 0 320 100" preserveAspectRatio="none">
+                    <path class="gridline"
+                        d="M0 20H320 M0 40H320 M0 60H320 M0 80H320
+                           M40 0V100 M80 0V100 M120 0V100
+                           M160 0V100 M200 0V100 M240 0V100 M280 0V100"/>
+
+                    <polyline
+                        points="0,70 20,60 40,72 60,38 80,52
+                        100,62 120,35 140,48 160,22 180,51
+                        200,66 220,43 240,55 260,30 280,50 300,42 320,32"/>
+                </svg>
+            </div>
+
+            <div class="stats-row">
+                <div>
+                    <small>BUILD QUEUE</small>
+                    <strong>02</strong>
+                </div>
+                <div>
+                    <small>ERROR RATE</small>
+                    <strong>0.08%</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="panel-title">
+                <h3>EVENT STREAM</h3>
+                <span class="red">● LIVE</span>
+            </div>
+
+            <div class="event">
+                <span class="event-dot green-bg"></span>
+                <div>
+                    <strong>Deployment successful</strong>
+                    <small>catalog-service · PROD</small>
+                </div>
+            </div>
+
+            <div class="event">
+                <span class="event-dot"></span>
+                <div>
+                    <strong>Terraform plan completed</strong>
+                    <small>network-prod · STAGING</small>
+                </div>
+            </div>
+
+            <div class="event">
+                <span class="event-dot red-bg"></span>
+                <div>
+                    <strong>Policy drift detected</strong>
+                    <small>storage-prod-02 · GOVERNANCE</small>
+                </div>
+            </div>
+        </section>
+
     </aside>
 
-    <main class="main-content">
-      <header class="topbar">
-        <div class="breadcrumb"><span class="muted">COMMAND CENTER</span><span class="slash">/</span><b id="section-title">VISIÓN GENERAL</b></div>
-        <div class="top-status"><span class="live-dot"></span> SYSTEM ONLINE <span class="divider">|</span> SKYNET v3.0 <span class="divider">|</span><span id="clock">--:--:--</span></div>
-      </header>
+    <!-- CENTER COLUMN -->
 
-      <section class="hero-row" id="overview">
-        <article class="panel governance-panel" id="governance">
-          <div class="panel-heading"><span class="icon-shield">⬡</span><div><h2>GOBERNANZA</h2><p>Políticas · Cumplimiento · Riesgos · Accesos</p></div></div>
-          <div class="governance-grid">
-            <div class="compliance-card">
-              <div class="big-check">✓</div><div class="metric-label">Cumplimiento</div><div class="big-number">98<span>%</span></div>
-              <div class="progress"><i style="width:98%"></i></div>
-              <ul class="check-list"><li>Políticas de acceso (IAM)</li><li>Control de cambios</li><li>Gestión de identidades</li><li>Auditoría y trazabilidad</li></ul>
+    <main class="column center-column">
+
+        <section class="panel radar-panel">
+
+            <div class="panel-title">
+                <h3>NETWORK / INFRASTRUCTURE RADAR</h3>
+                <span class="cyan">● SCANNING</span>
             </div>
-            <div class="risk-card"><div class="metric-label">Riesgos identificados</div>
-              <div class="risk-row red"><span>▲</span><div><small>Críticos</small><b>2</b></div></div>
-              <div class="risk-row orange"><span>▲</span><div><small>Altos</small><b>5</b></div></div>
-              <div class="risk-row yellow"><span>▲</span><div><small>Medios</small><b>12</b></div></div>
-              <div class="risk-row green"><span>◆</span><div><small>Bajos</small><b>34</b></div></div>
-            </div>
-          </div>
-        </article>
 
-        <article class="panel threat-panel">
-          <div class="globe-wrap"><div class="globe"><div class="globe-lines"></div><span class="globe-point p1"></span><span class="globe-point p2"></span><span class="globe-point p3"></span></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div></div>
-          <div class="global-monitor"><h3>MONITOREO GLOBAL</h3><p>⌘ &nbsp; Cloud (GCP / AWS / Azure)</p><p>⌘ &nbsp; Redes</p><p>⌘ &nbsp; Aplicaciones</p><p>⌘ &nbsp; Usuarios</p><p>⌘ &nbsp; Datos</p></div>
-          <div class="threat-counter"><span>AMENAZAS DETECTADAS</span><b id="threat-count">03</b></div>
-        </article>
+            <div class="radar" id="radar">
 
-        <article class="panel security-panel" id="security">
-          <div class="panel-heading"><span class="icon-lock">▣</span><div><h2>SEGURIDAD</h2><p>Vulnerabilidades · Amenazas · Protección</p></div></div>
-          <div class="security-summary"><div class="donut"><div><strong>97%</strong><small>Estado de<br>seguridad</small></div></div>
-            <div class="security-stats"><div><span class="red-text">◉</span><div><small>Vulnerabilidades abiertas</small><b>7 <em>(2 críticas)</em></b></div></div><div><span class="green-text">✓</span><div><small>Escaneos de seguridad</small><b class="green-text">Completados</b></div></div><div><span>◷</span><div><small>Último escaneo</small><b>Hoy 14:21</b></div></div></div>
-          </div>
-          <div class="chart-heading">Intentos de intrusión (24h) <span class="blocked">Bloqueados 38</span></div>
-          <div class="mini-chart" aria-label="Gráfico ilustrativo de intentos de intrusión"><div class="chart-y"><span>40</span><span>30</span><span>20</span><span>10</span><span>0</span></div><svg viewBox="0 0 420 88" preserveAspectRatio="none" role="img" aria-label="Tendencia de intentos de intrusión"><path class="chart-area" d="M0 70 L12 62 22 68 34 56 46 61 58 49 69 63 80 30 92 55 104 62 116 47 128 60 140 26 152 54 164 61 176 43 188 59 200 52 212 20 224 48 236 60 248 50 260 57 272 34 284 60 296 52 308 45 320 58 332 25 344 51 356 60 368 44 380 55 392 36 408 55 420 45 L420 88 L0 88 Z"/><path class="chart-line" d="M0 70 L12 62 22 68 34 56 46 61 58 49 69 63 80 30 92 55 104 62 116 47 128 60 140 26 152 54 164 61 176 43 188 59 200 52 212 20 224 48 236 60 248 50 260 57 272 34 284 60 296 52 308 45 320 58 332 25 344 51 356 60 368 44 380 55 392 36 408 55 420 45"/></svg></div>
-        </article>
-      </section>
+                <span class="degree d0">000</span>
+                <span class="degree d30">030</span>
+                <span class="degree d60">060</span>
+                <span class="degree d90">090</span>
+                <span class="degree d120">120</span>
+                <span class="degree d150">150</span>
+                <span class="degree d180">180</span>
+                <span class="degree d210">210</span>
+                <span class="degree d240">240</span>
+                <span class="degree d270">270</span>
+                <span class="degree d300">300</span>
+                <span class="degree d330">330</span>
 
-      <section class="panel pipeline-panel" id="pipeline">
-        <div class="pipeline-head"><div class="panel-heading"><span class="pipeline-icon">‹/›</span><div><h2>CI/CD · FLUJO DE DEPLOY</h2><p>Desde el commit hasta producción con controles de seguridad</p></div></div><div class="deploy-status"><span>Último deploy: <b>2026-10-10 02:48</b></span><strong>✓ EXITOSO</strong></div></div>
-        <div class="pipeline-flow" id="pipeline-flow">
-          <button class="stage" data-stage="CODE"><span class="stage-icon">&lt;/&gt;</span><b>CODE</b><small>Commit</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="BUILD"><span class="stage-icon">⚙</span><b>BUILD</b><small>Compilación</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="TEST"><span class="stage-icon">⚗</span><b>TEST</b><small>Unit & Integration</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="SECURITY"><span class="stage-icon">⬡</span><b>SECURITY</b><small>SAST / DAST / SCA</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="INTEGRACIÓN"><span class="stage-icon">⬡</span><b>INTEGRACIÓN</b><small>Deploy Dev</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="CERTIFICACIÓN"><span class="stage-icon">✺</span><b>CERTIFICACIÓN</b><small>Validación</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="QA"><span class="stage-icon">◈</span><b>QA</b><small>Pruebas E2E</small><i>✓</i></button><span class="flow-arrow">➜</span>
-          <button class="stage" data-stage="PRODUCCIÓN"><span class="stage-icon">➤</span><b>PRODUCCIÓN</b><small>Deploy Prod</small><i>✓</i></button>
-        </div>
-        <div class="stage-detail" id="stage-detail"><b>SELECCIONA UNA ETAPA</b><span>Haz clic en una fase para consultar sus controles y resultados.</span></div>
-      </section>
+                <div class="ring ring1"></div>
+                <div class="ring ring2"></div>
+                <div class="ring ring3"></div>
+                <div class="ring ring4"></div>
+                <div class="ring ring5"></div>
+                <div class="ring ring6"></div>
 
-      <section class="lower-grid">
-        <article class="panel pipelines-table" id="reports"><div class="section-heading"><h2>▣ PIPELINES RECIENTES</h2><button class="text-button" id="refresh-pipelines">↻ Actualizar</button></div>
-          <div class="table-wrap"><table><thead><tr><th>ID</th><th>Proyecto</th><th>Branch</th><th>Estado</th><th>Tiempo</th><th>Fecha</th></tr></thead><tbody id="pipeline-rows">
-            <tr><td>#4827</td><td>web-app</td><td>main</td><td><span class="badge success">● Exitoso</span></td><td>6m 32s</td><td>10-10 02:48</td></tr>
-            <tr><td>#4826</td><td>api-service</td><td>develop</td><td><span class="badge success">● Exitoso</span></td><td>8m 17s</td><td>10-10 02:41</td></tr>
-            <tr><td>#4825</td><td>frontend</td><td>main</td><td><span class="badge failed">▲ Fallido</span></td><td>4m 52s</td><td>10-10 02:32</td></tr>
-            <tr><td>#4824</td><td>infra</td><td>main</td><td><span class="badge success">● Exitoso</span></td><td>10m 11s</td><td>10-10 02:18</td></tr>
-            <tr><td>#4823</td><td>backend</td><td>feature/login</td><td><span class="badge success">● Exitoso</span></td><td>7m 03s</td><td>10-10 02:05</td></tr>
-          </tbody></table></div><div class="table-foot"><span id="pipeline-message">Mostrando 5 pipelines recientes</span><button class="text-button" id="view-all">Ver todos los pipelines →</button></div>
-        </article>
-
-        <article class="panel environments-panel" id="environments"><div class="section-heading"><h2>▣ ENTORNOS</h2><span class="muted">4 ACTIVOS</span></div>
-          <div class="environment-list">
-            <button class="environment" data-env="INTEGRACIÓN"><span class="env-icon">⬡</span><span class="env-name"><b>INTEGRACIÓN</b><small>v1.2.3 · Deploy Dev</small></span><span class="env-health"><b>● Salud: 100%</b><small>Último deploy: 02:15</small></span><span class="chevron">›</span></button>
-            <button class="environment" data-env="CERTIFICACIÓN"><span class="env-icon">⬢</span><span class="env-name"><b>CERTIFICACIÓN</b><small>v1.2.3 · Preproducción</small></span><span class="env-health"><b>● Salud: 100%</b><small>Último deploy: 01:42</small></span><span class="chevron">›</span></button>
-            <button class="environment" data-env="QA"><span class="env-icon">▣</span><span class="env-name"><b>QA</b><small>v1.2.3 · Pruebas E2E</small></span><span class="env-health"><b>● Salud: 99%</b><small>Último deploy: 01:28</small></span><span class="chevron">›</span></button>
-            <button class="environment" data-env="PRODUCCIÓN"><span class="env-icon">➤</span><span class="env-name"><b>PRODUCCIÓN</b><small>v1.2.3 · Live</small></span><span class="env-health"><b>● Salud: 100%</b><small>Último deploy: 02:48</small></span><span class="chevron">›</span></button>
-          </div><div class="env-detail" id="env-detail">Selecciona un entorno para ver su estado.</div>
-        </article>
-
-        <article class="panel observability-panel" id="observability"><div class="section-heading"><h2>⌁ OBSERVABILIDAD</h2><span class="live-label"><i></i> LIVE</span></div>
-          <div class="tabs" role="tablist"><button class="tab active" data-metric="metrics">Métricas</button><button class="tab" data-metric="logs">Logs</button><button class="tab" data-metric="traces">Traces</button></div>
-          <div id="observability-content" class="obs-content">
-            <div class="metric-tile"><span class="metric-icon">◉</span><div><small>CPU</small><b>32%</b><div class="spark"><i style="height:20%"></i><i style="height:40%"></i><i style="height:30%"></i><i style="height:55%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:48%"></i><i style="height:80%"></i></div></div></div>
-            <div class="metric-tile"><span class="metric-icon">▣</span><div><small>Memoria</small><b>68%</b><div class="spark blue"><i style="height:30%"></i><i style="height:45%"></i><i style="height:35%"></i><i style="height:60%"></i><i style="height:52%"></i><i style="height:75%"></i><i style="height:58%"></i><i style="height:65%"></i></div></div></div>
-            <div class="metric-tile"><span class="metric-icon">⌁</span><div><small>Red</small><b>1.2 Gbps</b><div class="spark blue"><i style="height:15%"></i><i style="height:35%"></i><i style="height:25%"></i><i style="height:48%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:72%"></i><i style="height:85%"></i></div></div></div>
-            <div class="metric-tile"><span class="metric-icon">▤</span><div><small>Disco</small><b>45%</b><div class="spark"><i style="height:20%"></i><i style="height:25%"></i><i style="height:35%"></i><i style="height:40%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:60%"></i><i style="height:55%"></i></div></div></div>
-          </div>
-        </article>
-      </section>
-      <footer class="footer"><strong>SKYNET</strong><span>SUPERVISIÓN</span><span>PREVENCIÓN</span><span>RESPUESTA</span><span>EVOLUCIÓN</span><p>NO ES SOLO UNA PLATAFORMA… ES TU ALIADO ESTRATÉGICO.</p></footer>
-      <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    </main>
-  </div>
-  <div class="dash-modal" id="dash-modal" aria-hidden="true"><div class="dash-backdrop" data-close></div><section class="dash-window" role="dialog" aria-modal="true" aria-labelledby="dash-title"><header class="dash-head"><div><small>SKYNET // TACTICAL CONSOLE</small><h2 id="dash-title">DASHBOARD</h2><p id="dash-subtitle">Panel interactivo</p></div><button class="dash-close" type="button" aria-label="Cerrar">×</button></header><div class="dash-toolbar"><span>● SISTEMA EN LÍNEA</span><span id="dash-time">DEMO</span><button type="button" id="dash-refresh">↻ Actualizar</button></div><div id="dash-body" class="dash-body"></div><footer>SKYNET / SECURE OPERATIONS CENTER · DATOS ILUSTRATIVOS</footer></section></div>
-<script src="app.js"></script>
-</body>
-</html>
+                <div class="axis axis-v"></div>
+                <div class="axis axis-h"></div>
+                <div class="axis axis-d1
